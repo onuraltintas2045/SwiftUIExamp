@@ -11,16 +11,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.makeKeyAndVisible()
-        window.overrideUserInterfaceStyle = .dark
-        window.rootViewController = HomePageVC()
+        let homeVC = HomePageVC()
+        let navController = UINavigationController(rootViewController: homeVC)
+        navController.overrideUserInterfaceStyle = .dark
+        window.rootViewController = navController
         self.window = window
+        window.makeKeyAndVisible()
     }
-
-
 }
 

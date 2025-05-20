@@ -42,7 +42,7 @@ class HomePageVC: UIViewController {
         let userView = UserListView()
             .environmentObject(settings)
         let hostController = UIHostingController(rootView: userView)
-        present(hostController, animated: true, completion: nil)
+        navigationController?.pushViewController(hostController, animated: true)
     }
 
 }

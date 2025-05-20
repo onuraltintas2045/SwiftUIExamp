@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+@MainActor
 class UserViewModel: ObservableObject {
     @Published var users: [User] = []
     @Published var isLoading: Bool = false
@@ -27,6 +28,5 @@ class UserViewModel: ObservableObject {
                 self.users = users
             })
             .store(in: &cancellables)
-
     }
 }
